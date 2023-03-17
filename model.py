@@ -15,3 +15,9 @@ class Book(BaseModel):
     book_title: str
     author: str
     price: int
+
+class BookUpdate(BaseModel):
+    book_id: int
+    book_title: str
+    author: str
+    price: int
