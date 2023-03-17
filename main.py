@@ -7,7 +7,7 @@ from typing import List
 from starlette.middleware.cors import CORSMiddleware
 
 from db import session
-from model import BookTable, Book
+from model import BookTable, Book, BookUpdate
 
 
 app = FastAPI()
@@ -30,7 +30,7 @@ def get_books():
     return books
 
 
-@app.get('/books/{book_id}')
+@app.get('/book/{book_id}')
 def get_book(book_id: int):
     book = session.query(BookTable).filter(BookTable.book_id == book_id).first()
 
